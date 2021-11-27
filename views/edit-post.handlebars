@@ -11,9 +11,7 @@
       <input class="textarea" name="post-content" type="text" value="{{blogPost.content}}" />
     </div>
     <div class="is-pulled-right">
-      <p>
-        created by you on {{format_date blogpost.created_at}} , {{format_date createdAt}} , {{format_date blogPost.createdAt}}
-      </p>
+     
       <a href="/blogPost/{{blogPost.id}}">{{blogPost.comments.length}} {{format_plural "comment" blogPost.comments.length}}</a>
     </div>
     <button type="submit" class="button is-success">save post</button>

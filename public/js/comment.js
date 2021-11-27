@@ -20,4 +20,4 @@ fetch('/api/comments', { //Not the correct route? maybe something before /api?
 }
 
 
-//submitButton.addEventListener('click', buttonSubmit);
+submitButton.addEventListener('click', buttonSubmit);
