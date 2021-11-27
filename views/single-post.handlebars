@@ -1,0 +1,23 @@
+<!-- displaying articles -->
+{{> blogPost-details blogPost}}
+
+<!-- displaying form and comments-->
+<!-- only display if logged in -->
+{{#if loggedIn}}
+<form class="comment-form">
+  <div>
+    <input class="ml-5" name="comment-body" id="commentText"></input>
+  </div>
+
+  <div>
+    <button class="button is-warning ml-5 mb-5" id="submitButton" type="submit" data-id={{blogPost.id}}>add comment</button>
+  </div>
+  
+</form>
+{{/if}}
+
+{{> comment blogPost.comments}}
+
+{{#if loggedIn}}
+<script src="/js/comment.js"></script>
+{{/if}}
