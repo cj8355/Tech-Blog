@@ -3,6 +3,7 @@ const sequelize = require('../config/connection');
 const { BlogPost, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
+// If the user is logged in, retreive all of their blog posts and display on the dashboard
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('Dashboard');
@@ -43,6 +44,7 @@ router.get('/', withAuth, (req, res) => {
       });
   });
 
+  // Allows users to edit/delete their blog posts
   router.get('/edit/:id', withAuth, (req, res) => {
     BlogPost.findOne({
       where: {
@@ -89,6 +91,7 @@ router.get('/', withAuth, (req, res) => {
       });
 });
 
+// Allows users to create blog posts
 router.get('/create/', withAuth, (req, res) => {
     BlogPost.findAll({
       where: {

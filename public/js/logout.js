@@ -4,6 +4,7 @@ const logout = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
   
+    // If the user logs out, redirect them to the login page
     if (response.ok) {
       document.location.replace('/login');
     } else {

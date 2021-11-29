@@ -2,15 +2,15 @@ const submitButton = document.querySelector('#submitButton');
 const commentText = document.querySelector('#commentText');
 
 
-const buttonSubmit = () => {
+const buttonSubmit = (event) => {
     event.preventDefault();
 console.log("Button");
 const newComment = {
     content: commentText.value,
-    blogPost_id: submitButton.dataset.id,//Get correct id of blogpost that comment is attached to
+    blogPost_id: submitButton.dataset.id,
 }
 console.log(newComment);
-fetch('/api/comments', { //Not the correct route? maybe something before /api?
+fetch('/api/comments', { 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

@@ -3,13 +3,7 @@ const User = require('./User');
 const Comment = require('./comment');
 const BlogPost = require('./blogPost');
 
-//  BlogPost.hasMany(Comment, {
-//    foreignKey: 'blogPost_id',
-//  });
 
-// Comment.belongsTo(BlogPost, {
-//  foreignKey: 'blogPost_id',
-//  });
 
 // Create associations between the models
 // User-Post relationship

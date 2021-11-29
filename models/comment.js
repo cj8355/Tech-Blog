@@ -1,3 +1,4 @@
+// Creating the model for the fake comments
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 

@@ -5,7 +5,6 @@ const { BlogPost, Comment, User } = require('../models');
 // GET all blog posts for homepage
 router.get('/', async (req, res) => {
   try {
-    console.log("Hi");
     const dbBlogPostData = await BlogPost.findAll({
       include: [
         {
@@ -33,13 +32,13 @@ console.log(blogPosts);
   }
 });
 
-// GET one gallery
+// GET one blog post
 router.get('/blogPost/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the gallery
+    // If the user is logged in, allow them to view the blogposts
     try {
       const dbBlogPostData = await BlogPost.findByPk(req.params.id, {
         include: [
@@ -73,13 +72,13 @@ router.get('/blogPost/:id', async (req, res) => {
   }
 });
 
-// GET one painting
+// GET one comment
 router.get('/comment/:id', async (req, res) => {
   // If the user is not logged in, redirect the user to the login page
   if (!req.session.loggedIn) {
     res.redirect('/login');
   } else {
-    // If the user is logged in, allow them to view the painting
+    // If the user is logged in, allow them to view the comment
     try {
       const dbCommentData = await Comment.findByPk(req.params.id);
 

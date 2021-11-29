@@ -3,7 +3,7 @@ const { BlogPost, User, Comment } = require('../../models');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
-// get all users
+// get all blog posts
 router.get('/', (req, res) => {
     console.log('======================');
     BlogPost.findAll({
@@ -37,6 +37,7 @@ router.get('/', (req, res) => {
       });
   });
 
+  // Get a blogpost by its id
   router.get('/:id', async (req, res) => {
     // If the user is not logged in, redirect the user to the login page
     if (!req.session.loggedIn) {
@@ -73,6 +74,7 @@ router.get('/', (req, res) => {
     }
   });
 
+  // Create a new blog post
 router.post('/', withAuth, (req, res) => {
   console.log(req.body);
     BlogPost.create({
@@ -87,6 +89,7 @@ router.post('/', withAuth, (req, res) => {
       });
 });
 
+// Updates a blog post based off its id
 router.put('/:id', withAuth, (req, res) => {
     BlogPost.update({
         title: req.body.title,
@@ -110,6 +113,7 @@ router.put('/:id', withAuth, (req, res) => {
       });
   });
 
+  // Deletes a blog post by its id
   router.delete('/:id', withAuth, (req, res) => {
     BlogPost.destroy({
       where: {

@@ -1,3 +1,4 @@
+// Creating fake comments for the blog posts
 const { Comment } = require('../models');
 
 const commentdata = [

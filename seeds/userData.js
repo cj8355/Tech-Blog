@@ -1,3 +1,4 @@
+// Creating fake users
 const { User } = require('../models');
 
 const userData = [

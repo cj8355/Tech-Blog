@@ -1,3 +1,4 @@
+// Creating the fake blog posts
 const { BlogPost } = require('../models');
 
 const blogPostdata = [

@@ -1,3 +1,4 @@
+// Creating the fake blog posts model
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
