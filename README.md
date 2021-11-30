@@ -1,6 +1,6 @@
 # Tech-Blog
 
-Link: 
+Link: https://powerful-retreat-67806.herokuapp.com/
 
 ## Description
 A tech blog application where users can create, edit and delete posts. Other users can also leave comments under each blog post.
